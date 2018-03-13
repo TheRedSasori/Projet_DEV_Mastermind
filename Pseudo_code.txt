@@ -1,0 +1,289 @@
+SINON// la fonction start sera appeller dés le début du programe.
+
+fonction(start){
+
+-----------------------
+Affichage :
+              Mastermind
+1 - Conection
+2 - Créer un compte
+3 - Quitter
+-----------------------
+
+switch :
+        case 1 :
+                  SI conection = ok
+                    ALORS  appel fonction(Connecte)
+                  SINON
+                    retourn "Erreur mots de passe ou Identifiant incorecte"
+                  break;
+        case 2 :
+                   fonction(creerCompte)
+                   break;
+        case 3 :
+                  fonction(Quitter)
+                  break;
+        default :
+                  "Veuillez choisir une options Valide (1 à 3) "
+                  break;
+}
+
+fonction(Connecte){
+
+---------------------
+Affichage :
+1 - Deviner ( Sans doublon )
+2 - Faire deviner ( Sans doublon )
+3 - Deviner ( Avec doublon )
+4 - Faire deviner ( Avec doublon )
+5 - Stats
+6 - Infos Personnelles
+7 - Quitter
+---------------------
+  switch :
+            case 1 :
+                    appele la fonction:(DevSnDoublon)
+                    break;
+
+            case 2 :
+                    appele la fonction:(FairDevSnDoublon)
+                    break;
+
+            case 3 :
+                    appele la fonction:(DevAvDoublon)
+                    break;
+
+            case 4 :
+                    appele la fonction:(FairDevAvDoublon)
+                    break;
+
+            case 5 :
+                    appele la fonction:(Stats)
+                    break;
+
+            case 6 :
+                    appele la fonction:(InfosPerso)
+                    break;
+
+            case 7 :
+                    appele la fonction:(Quitter)
+                    break;
+
+            default:
+                    "Veuillez choisir une options Valide (1 à 7) "
+                    break;
+
+}
+
+fonction:(DevAvDoublon){
+      // la variable "reponse" corespond à la chaine rentré par l'utilisateur
+      i = 0
+      BienPlacer = 0
+      MalPlacer = 0
+      tour = 0
+      string result
+
+      POUR i < 5 {
+                result += random+1
+                i++
+      }
+
+      //traitement de l'information
+      // le tableau traite évite de compatbiliser plusieur foi le même chiffre
+      // exemple resulet = 12145
+      //         respnse = 11111
+      // le programe repondra 2 BienPlacer
+
+      tableau = traite
+      SI result est égale reponse
+        ALORS
+          "Bravo vous avez gagné"
+      SINON
+        POUR (j = 0; j < lenglh; j++)
+          POUR (k = 0; k < lenglh; k++)
+            SI k est égale à j
+              ALORS  BienPlacer++ traite contien pas k
+            SINON SI
+              result contien k
+              ALORS MalPlacer++
+              k ajouter à traite
+      tour++
+      Afficher BienPlacer et MalPlacer
+      }
+
+
+fonction:(DevSnDoublon){
+      // la variable "reponse" corespond à la chaine rentré par l'utilisateur
+      i = 0
+      BienPlacer = 0
+      MalPlacer = 0
+      tour = 0
+      string result
+
+      POUR i < 5 {
+                resultA = random
+                  SI resultA contenu dans result
+                    ALORS resultA = random+1
+                    i--
+                    SINON
+                    resultA =+ result
+                    i++
+      }
+
+      //traitement de l'information
+
+      SI result est égale reponse
+        ALORS
+          "Bravo vous avez gagné"
+      SINON
+        POUR (j = 0; j < lenglh; j++)
+          POUR (k = 0; k < lenglh; k++)
+            SI k est égale à j
+              ALORS  BienPlacer++
+            SINON SI
+              result contien k
+              ALORS MalPlacer++
+      tour++
+      Afficher BienPlacer et MalPlacer
+      }
+
+fonction(FairDevSnDoublon){
+//création d'un tableau contenant toute les valeurs comprise entre 11111 et 99999
+        A = tableau
+        POUR ( i = 0; i < 99999; i++ )
+          i = i.string
+            SI (i < 5)
+              POUR (k = 0; k < 5 - i.lenglh)
+                i +="0"
+                //utilisation des FINSI et des FINPOUR de façon a rendre le pseudo code plus lisible
+                FINPOUR
+              FINSI
+            A[] = i
+        FINPOUR
+
+//on enlèvera en suite toutes les valeurs qui comporte un 0 et aussi touts les doublons
+
+            //retrait des 0
+              SI A[i] contien "0"
+                ALORS supprimer i
+              SINON
+                i++
+
+            //retrait des doublon
+              SI StringUtils.countMatches(A[i]) > 1
+                  ALORS supprimer i
+                SINON
+                  i++
+
+      // on effectura en suite le brute force avec pour base cette liste
+              BienPlacer = 0
+              MalPlacer = 0
+              Reponse = 12345
+              respon = A
+    // en raison d'un manque de temps la soltion présenter manque d'opptimisation
+
+---------------------
+Réponse :
+12345
+
+Combien de BienPlacer et de MalPlacer exemple [12] :
+
+---------------------
+
+            switch :
+            case 00 :
+                    return 56789
+                    break;
+            case 01 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 0 BienPlacer et 1 MalPlacer dans le respon(array) = respon(array)
+
+                    break;
+            case 02 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 0 BienPlacer et 2 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 03 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 0 BienPlacer et 3 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 04 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 0 BienPlacer et 4 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 05 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 0 BienPlacer et 5 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 10 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 1 BienPlacer et 0 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 11 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 1 BienPlacer et 1 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 12 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 1 BienPlacer et 2 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 13 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 1 BienPlacer et 3 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 14 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 1 BienPlacer et 4 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 20 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 2 BienPlacer et 0 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 21 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 2 BienPlacer et 1 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 22 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 2 BienPlacer et 2 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 23 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 2 BienPlacer et 3 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 30 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 3 BienPlacer et 0 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 31 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 3 BienPlacer et 1 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 32 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 3 BienPlacer et 2 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 40 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 4 BienPlacer et 0 MalPlacer dans le respon(array) = respon(array)
+                    break;
+            case 41 :
+                    findin respon(array)
+                    Trouver toutes les valeurs ayant 4 BienPlacer et 1 MalPlacer dans le respon(array) = respon(array)
+            case 50 :
+                    findin respon(array)
+                    Bravo!
+                    return valeur
+                    break;
+
+            default:
+                    "Veuillez choisir une options Valide "
+                    break;
+// Le but de cet algo est de réduir le plus rapidemandement le tableau A qui contien toutes les valeur possible.
+// Ici il compare toutes les valeur potentielement possible en fonction de la suite de charactère 12345.
+// L'utilisateur vas donc répondre en fonction de la suite qu'il veut faire deviner combien de BienPlacer et de MalPlacer il y a.
+// On entre alors dans le switch qui prend en charge toutes les valeurs que l'utilisateur pourrais indiquer a la machine pour l'aider à déduire la chaine.
+// En fonction de la réponse la machine vas mettre à jours le tableau respon qui vas au fur et a meusur se réduir.
+// Dans le méilleur des cas et pour optimiser l'algo il faut donc utiliser les valeurs déduites après le premier tours, elles seront peu à peu supprimer du tableau respon.
+// Normalement l'algo trouve la bonne réponse à partir du 5 ième tours. 
+}
